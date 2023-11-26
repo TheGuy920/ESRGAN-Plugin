@@ -1,0 +1,12 @@
+{
+    "category": "Metadata",
+    "changelog": "Highres",
+    "description": "Highres",
+    "guid": "70a8d2e2-6364-42a2-91fd-46ec8a6b9c45",
+    "name": "Highres",
+    "overview": "Highres",
+    "owner": "theguy920",
+    "targetAbi": "10.8.3.0",
+    "timestamp": "2022-08-07T12:43:43Z",
+    "version": "1.0.0.0"
+}

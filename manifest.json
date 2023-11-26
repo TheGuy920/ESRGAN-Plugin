@@ -7,14 +7,14 @@
         "owner": "theguy920",
         "category": "Metadata",
         "versions": [
-            {
-                "version": "1.0.0.0",
-                "changelog": "Main",
-                "targetAbi": "10.8.3.0",
-                "sourceUrl": "",
-                "checksum": "f505fcc1a9cee9d173cc5d9893c9e08a",
-                "timestamp": "2022-08-07T12:43:43Z"
-            }
+          {
+            "version": "1.0.0.0",
+            "changelog": "Main",
+            "targetAbi": "10.8.3.0",
+            "sourceUrl": "https://github.com/TheGuy920/ESRGAN-Plugin/releases/download/1.0.0.0/ESRGAN-Jellyfin-Plugin.zip",
+            "checksum": "",
+            "timestamp": "2022-08-07T12:43:43Z"
+          }
         ]
     }
 ]
