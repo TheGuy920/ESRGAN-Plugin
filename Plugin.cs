@@ -28,16 +28,12 @@ namespace Jellyfin.Plugin.ESRGAN
         /// </summary>
         /// <param name="applicationPaths">Instance of the <see cref="IApplicationPaths"/> interface.</param>
         /// <param name="xmlSerializer">Instance of the <see cref="IXmlSerializer"/> interface.</param>
-        /// <param name="serverConfiguration">Server configuration manager.</param>
         /// <param name="libraryManager">Library manager.</param>
-        /// <param name="itemRepository">Item repository.</param>
         /// <param name="logger">Logger.</param>
         public Plugin(
             IApplicationPaths applicationPaths,
             IXmlSerializer xmlSerializer,
-            IServerConfigurationManager serverConfiguration,
             ILibraryManager libraryManager,
-            IItemRepository itemRepository,
             ILogger<Plugin> logger)
             : base(applicationPaths, xmlSerializer)
         {
