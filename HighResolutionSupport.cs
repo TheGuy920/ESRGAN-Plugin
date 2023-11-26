@@ -1,10 +1,13 @@
 ﻿using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
+using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
+using MediaBrowser.Controller.Persistence;
 using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,22 +18,36 @@ using System.Threading.Tasks;
 
 namespace Jellyfin.Plugin.ESRGAN
 {
-    /// <summary>
-    /// The main plugin.
-    /// </summary>
-    public class HighResolutionSupportPlugin : BasePlugin<PluginConfiguration>, IHasWebPages
+    public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     {
-        public override string Name => "High Resolution Support";
-        public override Guid Id => Guid.Parse("70a8d2e2-6364-42a2-91fd-46ec8a6b9c45");
+        private ILibraryManager _libraryManager;
+        private ILogger<Plugin> _logger;
 
-        private readonly ILibraryManager _libraryManager;
-
-        public HighResolutionSupportPlugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer, ILibraryManager libraryManager)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Plugin"/> class.
+        /// </summary>
+        /// <param name="applicationPaths">Instance of the <see cref="IApplicationPaths"/> interface.</param>
+        /// <param name="xmlSerializer">Instance of the <see cref="IXmlSerializer"/> interface.</param>
+        /// <param name="serverConfiguration">Server configuration manager.</param>
+        /// <param name="libraryManager">Library manager.</param>
+        /// <param name="itemRepository">Item repository.</param>
+        /// <param name="logger">Logger.</param>
+        public Plugin(
+            IApplicationPaths applicationPaths,
+            IXmlSerializer xmlSerializer,
+            IServerConfigurationManager serverConfiguration,
+            ILibraryManager libraryManager,
+            IItemRepository itemRepository,
+            ILogger<Plugin> logger)
             : base(applicationPaths, xmlSerializer)
         {
             _libraryManager = libraryManager;
+            _logger = logger;
+
             InitializePlugin();
         }
+        public override string Name => "High Resolution Support";
+        public override Guid Id => Guid.Parse("70a8d2e2-6364-42a2-91fd-46ec8a6b9c45");
 
         private void InitializePlugin()
         {
