@@ -1,0 +1,20 @@
+[
+    {
+        "guid": "9c4e63f1-031b-4f25-988b-4f7d78a8b53e",
+        "name": "Highres",
+        "description": "Enables high resolution video content for your library",
+        "overview": "Manage your books",
+        "owner": "theguy920",
+        "category": "Metadata",
+        "versions": [
+            {
+                "version": "1.0.0.0",
+                "changelog": "Main",
+                "targetAbi": "10.8.3.0",
+                "sourceUrl": "",
+                "checksum": "f505fcc1a9cee9d173cc5d9893c9e08a",
+                "timestamp": "2022-08-07T12:43:43Z"
+            }
+        ]
+    }
+]
